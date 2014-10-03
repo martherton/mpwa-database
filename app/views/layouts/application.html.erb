@@ -59,14 +59,53 @@
 				<a class= href="http://mpwa.me"><img src="/assets/logo.png" id="brandingphoto" alt="Branding" /></a>
 			</div>
 
+       <nav class="admininfo">
+      <% if current_user? %>
+        Admin logged in: <%= current_user.username %><p></p>
+        <%= link_to "Create new viewer", new_viewer_path %><p></p>
+        <%= link_to "Log out", session_path, method: :delete %>
+      <% else %>
+        <p></p>  
+      <% end %>
+
+    </nav>  
+
+    <nav class="viewerinfo">
+      <% if current_viewer? %>
+        User: <%= current_viewer.username %><p></p>
+      
+      <% else %>
+        <p></p>  
+      <% end %>
+
 			<ul class="social-sites">
 				<li><a href="https://twitter.com/equityvigilante">a</a></li>
 				<li><a href="https://www.linkedin.com/pub/mark-artherton/47/40/7a4">j</a></li>
 				<li><a href="https://www.flickr.com/photos/127492516@N02/">v</a></li>
 				<li><a href="https://www.youtube.com/channel/UC4W96gmcG_XDCwQLpDLdvig">r</a></li>
 			</ul>
-		</div>	
+			
+
 		
+    <div role="navigation" id="buttoncontainer">
+          <ul id="button">
+            <li ><a href="http://mpwa.me/Index/main.html">Home</a></li>
+            <li ><a href="#blog">Blog</a></li>
+            <li ><a href="http://mpwa.me/links/links.html">Links</a></li>
+            <li ><a href="http://mpwa.me/About/About.html">About</a></li>
+             <li>
+              <% if current_viewer? %>
+                <%= link_to "Log out", viewersession_path, method: :delete %>
+                  <% else %>
+            
+                    <%= link_to "Log in", new_viewersession_path %>
+              <% end %>
+        </li> 
+            <li ><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
 		<%= yield %>
 
 			<div class="footer" Role="footer">
@@ -75,6 +114,7 @@
 				<p></p>
 				<small>contact email: info@mpwa.me</small>
 			</div>		
+
 		</div>	
 		
 	</body>

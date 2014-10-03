@@ -12,3 +12,11 @@ Openinfo.create([{
 	Openinformation: "Sign in gives access to my resume, detailed process information and track record data.  To ask for a login please email admin@mpwa.me and I will contact you to discuss your requirements.  If you have been issued with a login, please click login above.  The information below is some examples of in depth content.  Thanks Mark."
 
 	}])
+
+
+
+User.create([{
+	username: "mpwa2",
+	email: "info@mpwa.me",
+	password_digest: "administrate"
+	}])

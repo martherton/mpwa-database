@@ -1,17 +1,25 @@
 <section class="openinformations">	
 		
-			<% @openinfos.each do |openinfo| %>
+			
+
+			 <% @openinfos.each do |openinfo| %>
 				
 					<div class="openinformation">
 						
 						
 							<h2><%= link_to openinfo.title, openinfo_path(openinfo.id) %></h2>
 							<p><%= openinfo.Openinformation %></p>
-								
+							<p></p>
+							<% if current_user? %>
+							<%= link_to "Edit", edit_openinfo_path(openinfo.id) %>
+							<%= link_to "Delete", openinfos_path(openinfo.id), method: :delete %>
+							<% else %>
+							<p></p>
+							<% end %>	
 				
 					</div>
 					
-				<% end %>
+				<% end %> 
 
 			
 
