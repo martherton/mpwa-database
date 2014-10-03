@@ -38,3 +38,12 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_form'
+
+gem 'activeadmin', github: 'activeadmin/active_admin'
+
+gem 'devise'  #required for active_admin
+
+ruby "2.1.2"
+
+gem 'paperclip'

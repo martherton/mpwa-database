@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mpwasecure</title>
+  <title>Access to extra information - mpwa.me</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+
+		
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	
+	<!--[if lt IE 9]>
+    		<script src="js/html5shiv.js"></script>
+    		<script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
+  </style>
+
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+      .en-markup-crop-options {
+          top: 18px !important;
+          left: 50% !important;
+          margin-left: -90px !important;
+          width: 180px !important;
+          border: 2px rgba(255,255,255,.38) solid !important;
+          border-radius: 4px !important;
+      }
+
+      .en-markup-crop-options div div:first-of-type {
+          margin-left: 0px !important;
+      }
+  </style>
+
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55331302-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
-<body>
+<body class="background" >
+		<div class="page">
+			
+		<div class="masthead">	
+			<div role="Banner" class="branding">
+				<a class= href="http://mpwa.me"><img src="/assets/logo.png" id="brandingphoto" alt="Branding" /></a>
+			</div>
 
-<%= yield %>
+			<ul class="social-sites">
+				<li><a href="https://twitter.com/equityvigilante">a</a></li>
+				<li><a href="https://www.linkedin.com/pub/mark-artherton/47/40/7a4">j</a></li>
+				<li><a href="https://www.flickr.com/photos/127492516@N02/">v</a></li>
+				<li><a href="https://www.youtube.com/channel/UC4W96gmcG_XDCwQLpDLdvig">r</a></li>
+			</ul>
+		</div>	
+		
+		<%= yield %>
 
-</body>
+			<div class="footer" Role="footer">
+				<p></p>
+				<small>Mark Artherton, CFA, in Emerging Market Equity since 1998.  &copy; Semper Eruditio Ltd 2014. All Rights reserved</small>
+				<p></p>
+				<small>contact email: info@mpwa.me</small>
+			</div>		
+		</div>	
+		
+	</body>
 </html>

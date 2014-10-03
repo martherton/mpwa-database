@@ -1,0 +1,19 @@
+<section class="openinformations">	
+		
+			<% @openinfos.each do |openinfo| %>
+				
+					<div class="openinformation">
+						
+						
+							<h2><%= link_to openinfo.title, openinfo_path(openinfo.id) %></h2>
+							<p><%= openinfo.Openinformation %></p>
+								
+				
+					</div>
+					
+				<% end %>
+
+			
+
+					
+	</section>
