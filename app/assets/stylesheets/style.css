@@ -635,6 +635,15 @@ ul {
  		color: #FFFFFF;
  }
 
+ .admininfo {
+  color: #0066FF;
+ }
+
+ .openinformation {
+    margin: 0 auto;
+    max-width: 860px;
+  }
+
 /* SOCIAL SITES SET UP
 ----------------------
 ---------*/
@@ -767,6 +776,33 @@ ul {
 
 .linksidebar {
 	display: none;
+}
+
+.Editingopen a {
+  color: #FF0000;
+  text-decoration: underline;
+}
+
+.createpublic {
+  
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.createpublic a {
+  color: #FF0000;
+  text-align: centre;
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-top: 0.4em solid #c8c8c8;
+  border-bottom: 0.4em solid #c8c8c8;
+  border-left: 0.4em solid #c8c8c8;
+  border-right: 0.4em solid #c8c8c8;
+  border-radius: 1.6em;
+}
+
+.resumekey {
+  margin-top: 1em;
 }
 
 /* 480+ 
@@ -941,6 +977,37 @@ ul {
 	
 	height: 13em;
   margin-top: 0.5em;
+}
+
+.admininfo {
+  float: right;
+  color: #0066FF;
+  position: absolute;
+  padding-top: 1em;
+  top: 1em;
+  border-top: 0.4em solid #c8c8c8;
+  border-bottom: 0.4em solid #c8c8c8;
+  border-left: 0.4em solid #c8c8c8;
+  border-right: 0.4em solid #c8c8c8;
+  border-radius: 1.6em;
+}
+
+.admininfo a {
+  color: #FF0000;
+}
+
+.createpublic {
+  text-align: center;
+}
+
+.resumekey {
+  width: 840px;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.resumekey h2 {
+  font-size: 1.2em;
 }
 
 }

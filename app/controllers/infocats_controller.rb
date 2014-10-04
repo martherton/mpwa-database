@@ -1,0 +1,2 @@
+class InfocatsController < ApplicationController
+end

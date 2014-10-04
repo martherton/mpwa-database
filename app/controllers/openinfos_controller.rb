@@ -1,6 +1,8 @@
 class OpeninfosController < ApplicationController
 	def index
+	  
 	   @openinfos = Openinfo.all
+	   @user = 0
 	end   
 
 	def new
@@ -12,9 +14,9 @@ class OpeninfosController < ApplicationController
 	def create
 		require_user
 		@user = current_user
-		@openinfo = @user.openinfo.new(openinfo_params)
+		@openinfo = @user.openinfos.new(openinfo_params)
 		@openinfo.save
-		redirect_to openinfo_path(@openinfo.id)
+		redirect_to root_path
 	end
 
 	def show
@@ -51,7 +53,7 @@ class OpeninfosController < ApplicationController
 
     private
     def openinfo_params
-    	params.require(:openinfo).permit(:title, :openinformation)
+    	params.require(:openinfo).permit(:title, :Openinformation, :user_id)
     end	
 
 end

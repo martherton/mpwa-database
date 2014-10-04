@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   	if @user.present? and @user.authenticate(@password)  #the bcrypt check that the password is correct
   		session[:user_id] = @user.id 
-  		redirect_to root_path
+  		redirect_to infocats_path
 
   	else
   		flash[:error] = "Information not recognised!  Try Again"

@@ -1,0 +1,118 @@
+<section class="Resume">	
+		
+			<div class="resumekey">
+			  <ul>
+			  <li class="resumetab" >Key Points</li>
+			  <ul>
+
+			 <% @resumeitemskey.each do |resumeitem| %>
+				
+					
+						
+						
+							<li><h2><%= resumeitem.detail %></h2></li>
+							
+				
+					
+					
+				<% end %> 
+				</ul>
+
+			</div>	
+
+			<div class="resumeexp">
+			<li class="resumetab" >Experience</li>
+			
+			<ul>
+				<% @resumeitemsexp.each do |resumeitem| %>
+				
+					
+						
+						
+							<li><h2><%= resumeitem.organisation %></h2></li>
+							<h6><%= resumeitem.title_course %></h6>
+							<h6><%= resumeitem.start_date %></h6>
+							<h6><%= resumeitem.end_date %></h6>
+							<ul>
+							<li><%= resumeitem.detail %></li>
+							<li><%= resumeitem.detail1 %></li>
+							<li><%= resumeitem.detail2 %></li>
+							<li><%= resumeitem.detail3 %></li>
+							<li><%= resumeitem.detail4 %></li>
+							<li><%= resumeitem.detail5 %></li>
+							<li><%= resumeitem.detail6 %></li>
+							</ul>			
+							
+				
+					
+					
+				<% end %> 
+				</ul>
+
+
+			</div>	
+
+			<div class="resumeedu">
+			<li class="resumetab" >Education</li>
+				<ul>
+				<% @resumeitemsedu.each do |resumeitem| %>
+				
+					
+						
+						
+							<li><h2><%= resumeitem.organisation %></h2></li>
+							<h6><%= resumeitem.title_course %></h6>
+							<h6><%= resumeitem.start_date %></h6>
+							<h6><%= resumeitem.end_date %></h6>
+							<ul>
+							<li><%= resumeitem.detail %></li>
+							<li><%= resumeitem.detail1 %></li>
+							<li><%= resumeitem.detail2 %></li>
+							<li><%= resumeitem.detail3 %></li>
+							<li><%= resumeitem.detail4 %></li>
+							<li><%= resumeitem.detail5 %></li>
+							<li><%= resumeitem.detail6 %></li>
+							</ul>
+
+							
+				
+				
+					
+				<% end %> 
+				</ul>
+			</div>	
+
+			<div class="resumeoth">
+			<li class="resumetab" >Other</li>
+				<ul>
+
+				<% @resumeitemsoth.each do |resumeitem| %>
+				
+					
+						
+						
+							<li><h2><%= resumeitem.organisation %></h2></li>
+							<h6><%= resumeitem.title_course %></h6>
+							<h6><%= resumeitem.start_date %></h6>
+							<h6><%= resumeitem.end_date %></h6>
+							<ul>
+							<li><%= resumeitem.detail %></li>
+							<li><%= resumeitem.detail1 %></li>
+							<li><%= resumeitem.detail2 %></li>
+							<li><%= resumeitem.detail3 %></li>
+							<li><%= resumeitem.detail4 %></li>
+							<li><%= resumeitem.detail5 %></li>
+							<li><%= resumeitem.detail6 %></li>
+							</ul>
+
+							
+				
+					
+					
+				<% end %> 
+				</ul>
+
+			</div>		
+    </ul>
+    
+	</section>

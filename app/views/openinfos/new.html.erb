@@ -1,0 +1,8 @@
+<%= simple_form_for [@user, @openinfo], url: openinfos_path, method: :post do |f| %>
+
+	<%= f.input :title %>
+	<%= f.input :Openinformation %>
+	
+	<%= f.button :submit, "Add information" %>
+	* Required field
+<% end %>

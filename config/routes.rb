@@ -5,12 +5,19 @@ Rails.application.routes.draw do
   root "openinfos#index"
   resources :openinfos
 
-  resources :users
+  resources :users do
+  	resources :openinfos
+    resources :resumeitems
+  end	
   
   resource :session
 
   resources :viewers
 
   resource :viewersession
+
+  resources :infocats
+
+  resources :resumeitems
 
 end

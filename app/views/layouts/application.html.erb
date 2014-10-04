@@ -59,24 +59,39 @@
 				<a class= href="http://mpwa.me"><img src="/assets/logo.png" id="brandingphoto" alt="Branding" /></a>
 			</div>
 
+       
+       <% if current_viewer? %>
        <nav class="admininfo">
-      <% if current_user? %>
-        Admin logged in: <%= current_user.username %><p></p>
-        <%= link_to "Create new viewer", new_viewer_path %><p></p>
+       <ul>
+       <li>
+       User: <%= current_viewer.username %>
+       </li>
+       <li>
+        <%= link_to "Private Information", infocats_path %>
+        </li>
+       </ul>
+       </nav>
+      <% elsif current_user? %>
+        <nav class="admininfo">
+        Admin logged in: <%= current_user.username %>
+        <ul>
+        <li>
+        <%= link_to "Create new viewer", new_viewer_path %>
+        </li>
+        <li>
         <%= link_to "Log out", session_path, method: :delete %>
+        </li>
+        <li>
+        <%= link_to "Private Information", infocats_path %>
+        </li>
+        </ul>      
       <% else %>
         <p></p>  
       <% end %>
 
     </nav>  
 
-    <nav class="viewerinfo">
-      <% if current_viewer? %>
-        User: <%= current_viewer.username %><p></p>
-      
-      <% else %>
-        <p></p>  
-      <% end %>
+   
 
 			<ul class="social-sites">
 				<li><a href="https://twitter.com/equityvigilante">a</a></li>
@@ -94,7 +109,9 @@
             <li ><a href="http://mpwa.me/links/links.html">Links</a></li>
             <li ><a href="http://mpwa.me/About/About.html">About</a></li>
              <li>
-              <% if current_viewer? %>
+             <% if current_user? %>
+             <%= link_to "Log out", session_path, method: :delete %>
+              <% elsif current_viewer? %>
                 <%= link_to "Log out", viewersession_path, method: :delete %>
                   <% else %>
             
