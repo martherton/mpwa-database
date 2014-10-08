@@ -14,7 +14,7 @@ class ViewersessionsController < ApplicationController
 
   	else
   		flash[:error] = "Information not recognised!  Try Again"
-  		render :new
+  		redirect_to root_path
   	end	
   		
   end	

@@ -1,0 +1,10 @@
+<%= simple_form_for [@user, @infocat], url: infocats_path, method: :post do |f| %>
+
+	<%= f.input :title %>
+	<%= f.input :brief_description %>
+	<%= f.input :itemorder %>
+	<%= f.input :routing %>
+
+	<%= f.button :submit, "Add category" %>
+	* Required field
+<% end %>

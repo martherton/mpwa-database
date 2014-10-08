@@ -1,7 +1,12 @@
+<div class="oihead" >
+
+  <h2>Selection of posts</h2>
+  <p></p> 
+</div>
 <section class="openinformations">	
 		
-			<% if current_user? %>
 			<div class="createpublic" >
+			<% if current_user? %>
 			<%= link_to "Create", new_openinfo_path %>
 			<% end %>
 			</div>
@@ -11,16 +16,20 @@
 					<div class="openinformation">
 						
 						
-							<h2><%= link_to openinfo.title, openinfo_path(openinfo.id) %></h2>
-							<p><%= openinfo.Openinformation %></p>
+							<h2><%= openinfo.title %></h2>
+							<h5><%= openinfo.Openinformation %>
+							<% if openinfo.Moreinformation.nil? %>
+							</h5>
+							<%else %>
+										<%= link_to "....more.", openinfo_path(openinfo.id) %></h5>
+							<% end %>
 							<p></p>
 							<% if current_user? %>
 							<div class="Editingopen">
-							<%= link_to "Edit", edit_openinfo_path(openinfo.id) %>
-							<%= link_to "Delete", openinfos_path(openinfo.id), method: :delete %>
+							<h5><%= link_to "Edit", edit_openinfo_path(openinfo.id) %></h5>
+							<h5><%= link_to "Delete", openinfo_path(openinfo.id), method: :delete %></h5>
 							</div>
-							<% else %>
-							<p></p>
+							
 							<% end %>	
 				
 					</div>

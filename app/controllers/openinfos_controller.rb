@@ -1,10 +1,10 @@
 class OpeninfosController < ApplicationController
 	def index
 	  
-	   @openinfos = Openinfo.all
+	   @openinfos = Openinfo.all.order('itemorder')
 	   @user = 0
 	end   
-
+ 
 	def new
 		require_user
 		@user = current_user
@@ -16,7 +16,7 @@ class OpeninfosController < ApplicationController
 		@user = current_user
 		@openinfo = @user.openinfos.new(openinfo_params)
 		@openinfo.save
-		redirect_to root_path
+		redirect_to openinfos_path
 	end
 
 	def show
@@ -26,17 +26,17 @@ class OpeninfosController < ApplicationController
 	def edit
 		require_user
 		@user = current_user
-		@openinfo = @user.openinfo.find(params[:id])
+		@openinfo = @user.openinfos.find(params[:id])
 	end	
 
 	def update
 		require_user
 		@user = current_user
-		@openinfo = @user.openinfo.find(params[:id])
+		@openinfo = @user.openinfos.find(params[:id])
 
 		if @openinfo.update(openinfo_params)
         flash[:success] = "Information was updated"
-        redirect_to openinfo_path(@openinfo.id)
+        redirect_to openinfos_path(@openinfo.id)
     else
       flash[:error] = "Oops. There has been a problem, please retry."
       render :edit
@@ -45,15 +45,15 @@ class OpeninfosController < ApplicationController
     def destroy
     	require_user
     	@user = current_user
-    	@openinfo = @user.openinfo.find(params[:id])
+    	@openinfo = @user.openinfos.find(params[:id])
     	@openinfo.destroy
     	flash[:success] = "This information was deleted succesfully"
-    redirect_to root_path
+    redirect_to openinfos_path
     end	
 
     private
     def openinfo_params
-    	params.require(:openinfo).permit(:title, :Openinformation, :user_id)
+    	params.require(:openinfo).permit(:title, :Openinformation, :user_id, :itemorder, :Moreinformation)
     end	
 
 end

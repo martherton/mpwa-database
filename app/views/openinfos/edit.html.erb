@@ -1,0 +1,10 @@
+<%= simple_form_for [@user, @openinfo], url: openinfo_path, method: :put do |f| %>
+
+	<%= f.input :title %>
+	<%= f.input :Openinformation %>
+	<%= f.input :itemorder %>
+	<%= f.input :Moreinformation %>
+	
+	<%= f.button :submit, "Add information" %>
+	* Required field
+<% end %>

@@ -51,88 +51,132 @@
 
 </script>
 </head>
-<body class="background" >
-		<div class="page">
-			
-		<div class="masthead">	
-			<div role="Banner" class="branding">
-				<a class= href="http://mpwa.me"><img src="/assets/logo.png" id="brandingphoto" alt="Branding" /></a>
-			</div>
+<body >
+		
+ 
+		<div class="page" >
+      <section id="section1" class="setofdata">
+          <div class="slowscroll" id="slowscroll1" >
 
-       
-       <% if current_viewer? %>
-       <nav class="admininfo">
-       <ul>
-       <li>
-       User: <%= current_viewer.username %>
-       </li>
-       <li>
-        <%= link_to "Private Information", infocats_path %>
-        </li>
-       </ul>
-       </nav>
-      <% elsif current_user? %>
-        <nav class="admininfo">
-        Admin logged in: <%= current_user.username %>
-        <ul>
-        <li>
-        <%= link_to "Create new viewer", new_viewer_path %>
-        </li>
-        <li>
-        <%= link_to "Log out", session_path, method: :delete %>
-        </li>
-        <li>
-        <%= link_to "Private Information", infocats_path %>
-        </li>
-        </ul>      
-      <% else %>
-        <p></p>  
+       <div id="brandingcontainer" >
+        
+          <h2>Mark Artherton, CFA</h2>
+          <h4>Emerging Market Equity</h4>
+          <h4>Strategist, Stock Selector, Portfolio Constructor</h4>
+          
+      </div>       
+
+        <div class="usercontainer" >      
+           <div class="usertype">
+              <% if current_viewer? %>
+                  <p></p>
+                   <h4>User: <%= current_viewer.username %></h4>
+              <% elsif current_user? %>
+                    <p></p>
+                   <h4>Admin logged in: <%= current_user.username %></h4>
+              <% else %>
+                  <div class="login" >
+                  <%= simple_form_for :viewersession, url: viewersession_path do |f| %>
+                  <h4>User name</h4>
+                  <%= f.input :username, label: false, required: false %>
+                  <h4>Password</h4>
+                  <%= f.input :password, label: false, required: false %>
+
+                  <%= f.button :submit, 'Log in' %>
+                  <% end %>
+                  </div>
+              <% end %>
+            </div>
+        </div>    
+
+      
+
+            
+
+      <div id="sicontainer" >
+        <ul id="sinav" >
+          <li><a href="https://twitter.com/mark_emerging" ><h3  >a</h3></a></li>
+          <li><a href="https://www.linkedin.com/pub/mark-artherton/47/40/7a4" ><h3  >j</h3></a></li>
+          <li><a href="https://www.flickr.com/photos/127492516@N02/" ><h3  >v</h3></a></li>
+          <li><a href="https://www.youtube.com/channel/UC4W96gmcG_XDCwQLpDLdvig" ><h3  >r</h3></a></li>
+        </ul>
+    </div>
+
+    <div id="container" >
+      <div class="txtdes" >
+        <h2 >Private Area</h2>
+      </div>
+    </div>
+    
+
+
+  <div id="navcontainer" >
+    <ul id="navul" >
+      <li><a href="http://www.mpwa.me" class="centfloat" ><h3  >Home</h3></a></li>
+      <li><a href="http://www.mpwa.me/links/links.html" class="centfloat" ><h3 >Links</h3></a></li>
+      <li><a href="#blog" class="centfloat" ><h3  >Blog</h3></a></li>
+          
+      <% if current_viewer? | current_user? %>
+       <li><h3  ><%= link_to "Categories", infocats_path %></h3></li>
       <% end %>
 
-    </nav>  
-
-   
-
-			<ul class="social-sites">
-				<li><a href="https://twitter.com/equityvigilante">a</a></li>
-				<li><a href="https://www.linkedin.com/pub/mark-artherton/47/40/7a4">j</a></li>
-				<li><a href="https://www.flickr.com/photos/127492516@N02/">v</a></li>
-				<li><a href="https://www.youtube.com/channel/UC4W96gmcG_XDCwQLpDLdvig">r</a></li>
-			</ul>
-			
-
-		
-    <div role="navigation" id="buttoncontainer">
-          <ul id="button">
-            <li ><a href="http://mpwa.me/Index/main.html">Home</a></li>
-            <li ><a href="#blog">Blog</a></li>
-            <li ><a href="http://mpwa.me/links/links.html">Links</a></li>
-            <li ><a href="http://mpwa.me/About/About.html">About</a></li>
-             <li>
-             <% if current_user? %>
-             <%= link_to "Log out", session_path, method: :delete %>
-              <% elsif current_viewer? %>
-                <%= link_to "Log out", viewersession_path, method: :delete %>
-                  <% else %>
-            
-                    <%= link_to "Log in", new_viewersession_path %>
+      <% if current_viewer? %>
+      <li  >
+        <h3  ><%= link_to "Log out", viewersession_path, method: :delete %></h3>
+        </li>
+        <li><h3>
+        <% flash.each do |key, value| %>
+             <div class="flashcontainer" >
+              <div class="flash <%= key %>"><%= value %></div>
+              </div>
               <% end %>
-        </li> 
-            <li ><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
+       </h3></li>   
+        </ul>
+      <% elsif current_user? %>
+        <li  >
+        <h3  ><%= link_to "Log out", session_path, method: :delete %></h3>
+        </li>  
+        <li  >
+        <h3  ><%= link_to "Create new viewer", new_viewer_path %></h3>
+        </li>
+        <li><h3>
+        <% flash.each do |key, value| %>
+             <div class="flashcontainer" >
+              <div class="flash <%= key %>"><%= value %></div>
+              </div>
+              <% end %>
+       </h3></li>   
+        </ul>
+      <% else %>
+        <li><h3>
+        <% flash.each do |key, value| %>
+             <div class="flashcontainer" >
+              <div class="flash <%= key %>"><%= value %></div>
+              </div>
+              <% end %>
+       </h3></li>   
+        </ul>
+        
+      
+      <% end %>  
+    
+  </div>
+            
+     
 
+</section>  
+<section id="section1" >
+  <div  id="slowscroll2" >
 		<%= yield %>
-
+  </div>  
+</section>
 			<div class="footer" Role="footer">
 				<p></p>
 				<small>Mark Artherton, CFA, in Emerging Market Equity since 1998.  &copy; Semper Eruditio Ltd 2014. All Rights reserved</small>
 				<p></p>
 				<small>contact email: info@mpwa.me</small>
 			</div>		
-
-		</div>	
+    </div>  
 		
 	</body>
 </html>

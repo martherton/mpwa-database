@@ -1,0 +1,20 @@
+							<h2><%= @resumeitem.sections %></h2>
+							<%if @resumeitem.sections == @key %>
+							<h3><%= @resumeitem.detail %></h3>
+							<%else %>
+							<h3><%= @resumeitem.organisation %></h3>
+							<h3><%= @resumeitem.title_course %>
+							<% end %>
+							<p></p>
+							<%= @resumeitem.Moreinformation %>
+
+
+							<% if current_user? %>
+							<div class="Editingopen">
+							<%= link_to "Edit", edit_resumeitem_path(@resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(@resumeitem.id), method: :delete %>
+							</div>
+							<% else %>
+							<p></p>
+							<% end %>	
+							<%= link_to "Return to List", resumeitems_path %>

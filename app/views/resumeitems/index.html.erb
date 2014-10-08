@@ -1,16 +1,26 @@
 <section class="Resume">	
-		
-			<div class="resumekey">
-			  <ul>
-			  <li class="resumetab" >Key Points</li>
-			  <ul>
+
+<h2 id="resumehead" >CV/Resume</h2>
+
+		<ul class="resumetabs">
+			
+			  
+			  <li class="resumetab" id="resumetabakey"><a href="#" class="resumetaba" data-display1="block" ><h2>Key Points</h2></a></li>
+			  <li class="resumetab" id="resumetabaexp"><a href="#" class="resumetaba" id="resumetabexp" data-display2="block"><h2>Experience</h2></a></li>
+			  <li class="resumetab" id="resumetabaedu"><a href="#" class="resumetaba" id="resumetabedu" data-display3="block"><h2>Education</h2></a></li>
+			  <li class="resumetab" id="resumetabaoth"><a href="#" class="resumetaba" id="resumetaboth" data-display4="block" ><h2>Other</h2></a></li>
+			  </ul>
+			  <ul id="resumekeygo" >
 
 			 <% @resumeitemskey.each do |resumeitem| %>
 				
-					
+					 
 						
 						
-							<li><h2><%= resumeitem.detail %></h2></li>
+							<li><h4><%= resumeitem.detail %><%= link_to "...", resumeitem_path(resumeitem.id) %></h4></li>
+							<% if current_user? %><%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %><% end %>
+							
 							
 				
 					
@@ -18,22 +28,23 @@
 				<% end %> 
 				</ul>
 
-			</div>	
-
-			<div class="resumeexp">
-			<li class="resumetab" >Experience</li>
-			
-			<ul>
-				<% @resumeitemsexp.each do |resumeitem| %>
 				
-					
-						
-						
-							<li><h2><%= resumeitem.organisation %></h2></li>
+
+			
+			
+			
+			<ul id="resumeexpb">
+			
+			
+				<% @resumeitemsexp.each do |resumeitem| %>
+				 
+					<div class="expitem" >
+
+							<li><h4><%= resumeitem.organisation %></h4></li>
 							<h6><%= resumeitem.title_course %></h6>
-							<h6><%= resumeitem.start_date %></h6>
-							<h6><%= resumeitem.end_date %></h6>
-							<ul>
+							<h6 class="datesresume"><%= resumeitem.start_date %>-
+							<%= resumeitem.end_date %></h6>
+							<ul class="detailsexp">
 							<li><%= resumeitem.detail %></li>
 							<li><%= resumeitem.detail1 %></li>
 							<li><%= resumeitem.detail2 %></li>
@@ -41,8 +52,13 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %>
 							</ul>			
-							
+							<% if current_user? %>
+							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<% end %>
+						</div>
 				
 					
 					
@@ -50,21 +66,21 @@
 				</ul>
 
 
-			</div>	
+				
 
-			<div class="resumeedu">
-			<li class="resumetab" >Education</li>
-				<ul>
+			
+			
+				<ul id="resumeedub">
 				<% @resumeitemsedu.each do |resumeitem| %>
 				
 					
+						<div class="expitem" >
 						
-						
-							<li><h2><%= resumeitem.organisation %></h2></li>
+							<li><h4><%= resumeitem.organisation %></h4></li>
 							<h6><%= resumeitem.title_course %></h6>
-							<h6><%= resumeitem.start_date %></h6>
-							<h6><%= resumeitem.end_date %></h6>
-							<ul>
+							<h6 class="datesresume" ><%= resumeitem.start_date %>-
+							<%= resumeitem.end_date %></h6>
+							<ul class="detailsexp">
 							<li><%= resumeitem.detail %></li>
 							<li><%= resumeitem.detail1 %></li>
 							<li><%= resumeitem.detail2 %></li>
@@ -72,26 +88,30 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %>
 							</ul>
-
+							<% if current_user? %>
+							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<% end %>
 							
-				
+					</div>
 				
 					
 				<% end %> 
 				</ul>
-			</div>	
+			
 
-			<div class="resumeoth">
-			<li class="resumetab" >Other</li>
-				<ul>
+			
+			
+				<ul id="resumeothb">
 
 				<% @resumeitemsoth.each do |resumeitem| %>
 				
 					
 						
 						
-							<li><h2><%= resumeitem.organisation %></h2></li>
+							<li><h4><%= resumeitem.organisation %></h4></li>
 							<h6><%= resumeitem.title_course %></h6>
 							<h6><%= resumeitem.start_date %></h6>
 							<h6><%= resumeitem.end_date %></h6>
@@ -103,16 +123,24 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %>
 							</ul>
-
-							
-				
+							<% if current_user? %>
+							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<% end %>
 					
 					
 				<% end %> 
 				</ul>
 
-			</div>		
-    </ul>
+				
     
+
 	</section>
+
+	<div id="create">
+		<% if current_user? %>
+		<%= link_to "Create", new_resumeitem_path %>
+		<% end %>
+	</div>	

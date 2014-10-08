@@ -11,21 +11,11 @@
 
 
 
-Resumeitem.create([{ 
-	sections: "Key", 
-	organisation: " ",
-	title_course: " ", 
-	location: " ", 
-	start_date: " ", 
-	end_date: " ", 
-	detail: "In depth understanding of the asset management industry", 
-	detail1: " ", 
-	detail2: " ", 
-	detail3: " ", 
-	detail4: " ",
-	detail5: " ",
-	detail6: " ",
-	user_id: 2 
+Infocat.create ([{
+	title: "CV/Resume",
+	brief_description: "An in depth review of skills and experience",
+	routing: "resumeitems",
+	itemorder: 1
 	}])
 
 

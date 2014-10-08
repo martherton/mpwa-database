@@ -1,0 +1,22 @@
+<%= simple_form_for [@user, @resumeitem], url: resumeitems_path, method: :post do |f| %>
+	
+	<%= f.input :sections %>
+	<%= f.input :organisation %>
+	<%= f.input :title_course %>
+	<%= f.input :location %>
+	<%= f.input :start_date %>
+	<%= f.input :end_date %>
+	<%= f.input :detail %>
+	<%= f.input :detail1 %>
+	<%= f.input :detail2 %>
+	<%= f.input :detail3 %>
+	<%= f.input :detail4 %>
+	<%= f.input :detail5 %>
+	<%= f.input :detail6 %>
+	<%= f.input :itemorder %>
+	<%= f.input :Moreinformation %>
+ 
+
+	<%= f.button :submit, 'Enter data' %>
+
+<% end %> 

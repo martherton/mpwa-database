@@ -1,3 +1,21 @@
-// Place all the styles related to the openinfos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.oihead {
+	text-align: center;
+	font-weight: bold;
+}
+.openinformations {
+	margin: 1em;
+}
+
+.openinformation {
+	border: 0.3em solid #C8C8C8;
+	margin-bottom: 0.3em;
+}
+
+.openinformation h2 {
+	padding: 0.2em;
+}
+
+.openinformation h5 {
+	padding: 0.4em;
+}
