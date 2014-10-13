@@ -19,11 +19,11 @@ class Corporate < ActiveRecord::Base
 
   def self.search(query)
   	
-  where("name like ?", "%#{query}%") 
-	 where("sector like ?", "%#{query}%") 
+  where("name like ? or sector like ?", "%#{query}%", "%#{query}") 
+
 	 
 
 
-end
+	end
 
 end

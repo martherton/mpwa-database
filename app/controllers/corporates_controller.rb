@@ -3,12 +3,18 @@ class CorporatesController < ApplicationController
 	def index
 		  if params[:search].present? and params[:search][:q].present? and Corporate.search(params[:search][:q]).present?
 	        @corporates = Corporate.search(params[:search][:q])
+	        
 	    elsif params[:search].present? 
 	        flash.now[:error] = "No company with name #{params[:search][:q]}"
-	        @corporates = Corporate.all
+	        @corporates == Corporate.all.order('country')
+	    elsif params[:fullsearch].present?
+	    		@corporates = Corporate.where(:country => params[:fullsearch][:country] )
+	    elsif params[:fullssearch].present?
+	    		@corporates = Corporate.where(:sector => params[:fullssearch][:sector] ) 		    
 	    else 
-			   @corporates = Corporate.all
-			   @user = 0
+			   @corporates = Corporate.all.order('country')
+			  
+			   
 
 	 end
 	end   
@@ -54,7 +60,7 @@ class CorporatesController < ApplicationController
     	require_user
     	@user = current_user
     	@corporate = @user.corporates.find(params[:id])
-    	@openinfo.destroy
+    	@corporate.destroy
     	flash[:success] = "This information was deleted succesfully"
     redirect_to corporates_path
     end	

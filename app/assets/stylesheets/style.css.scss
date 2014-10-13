@@ -208,6 +208,14 @@ ul {
   padding-right: 1em;
 }
 
+hr {
+  width: 65%;
+}
+
+#suredelete {
+  display: none;
+  
+}
 /*Setting all pictures max width
 --------------------------------
 -------*/
@@ -221,7 +229,8 @@ ul {
 -----*/
 
 .login input[type="text"],
-.login input[type="password"] {
+.login input[type="password"],
+.login input[type="email"] {
   width: 15em;
   background-color: #345678;
   color: #FFFFFF;
@@ -340,12 +349,13 @@ ul {
   
   color: #DBDBDB;
   display: inline-block;
-  margin: 0.5em;
+  margin: 0em;
+
 }
 
-.flash_error,
+.flash,
 .flashcontainer {
-  
+  font-size: 0.9em;
 }
 
 #navul .privatenav {

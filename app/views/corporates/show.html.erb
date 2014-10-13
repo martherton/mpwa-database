@@ -3,11 +3,14 @@
 </div>
 
 <div class="corpreturn" >
-<% if current_user? %>
-							<div class="Editingopen">
+							<% if current_user? %>
+							<div class="Editingopen" >
 							<%= link_to "Edit", edit_corporate_path(@corporate.id) %>
-							<%= link_to "Delete", corporate_path(@corporate.id), method: :delete %>
+							<h4><a href="#" id="suredeletelink" >Delete</a></h4>
+							<div id="suredelete" >
+							<h4><%= link_to "Are you sure", corporate_path(@corporate.id), method: :delete %><%= link_to "Cancel", corporate_path(@corporate.id) %></h4>
 							<p></p>
+							</div>
 							</div>
 							<% else %>
 							<p></p>

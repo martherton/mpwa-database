@@ -1,3 +1,32 @@
 // Place all the styles related to the viewers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.newviewer input[type="text"],
+.newviewer input[type="password"],
+.newviewer input[type="email"] {
+  width: 20em;
+  background-color: #345678;
+  color: #FFFFFF;
+  border: inset;
+}
+
+.newviewer h4 {
+  margin-bottom: 0.2em;
+
+}
+
+.newviewer {
+  background-color: #C8C8C8;
+    font-size: .7em;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5em;
+  margin-left: 15em;
+  margin-top: 2em;
+  
+}
+
+.newviewer input[type="submit"] {
+   margin-left: 4em;
+   margin-top: 0.4em;
+}

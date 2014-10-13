@@ -13,14 +13,14 @@ class SessionsController < ApplicationController
   		redirect_to infocats_path
 
   	else
-  		flash[:error] = "Information not recognised!  Try Again"
+  		flash[:error] = "please try again!"
   		render :new
   	end	
   		
   end	
   	def destroy
   		reset_session
-  		flash[:success] = "You are now logged out."
+  		flash[:success] = "logged out"
   		redirect_to root_path
   	end	
 end

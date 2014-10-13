@@ -23,7 +23,9 @@
 							<h5><%= download.description %><h5>
 							</li>
 							<li><%= link_to "Download Document", download_path(download.id) %></li>
+							<% if current_user?%>
 							<li><%= download.docupload.path %></li>
+							<%end%>
 
 							
 							<% if current_user? %>
@@ -33,8 +35,8 @@
 							</div>
 							
 							<% end %>	
-				
-					
+				<hr>
+							
 				<% end %> 
 
 					</ul>

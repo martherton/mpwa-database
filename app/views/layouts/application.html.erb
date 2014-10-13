@@ -173,7 +173,7 @@
   </div>
     <div id="hidcontain" >        
       <ul id ="hiddendrop">
-              <% @infocats = Infocat.all %>
+              <% @infocats = Infocat.all.order('itemorder') %>
              <% @infocats.each do |infocat| %>
               <li  >
               <h3><%= link_to infocat.title, [infocat.routing] %> </h3>

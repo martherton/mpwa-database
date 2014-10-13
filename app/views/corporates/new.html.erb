@@ -1,17 +1,21 @@
+<div class="newopen" >
+<h2>New Stock entry</h2>
+
 <%= simple_form_for [@user, @corporate], url: corporates_path, method: :post do |f| %>
 
-	<%= f.input :name %>
-	<%= f.input :country %>
+	<h4>Name</h4><%= f.input :name, label: false %>
+	<h4>Country</h4><%= f.input :country, label: false %>
 	
-	<%= f.input :sector %>
-	<%= f.input :activity %>
-	<%= f.input :address, label: 'Street, City' %>
+	<h4>Sector</h4><%= f.input :sector, label: false %>
+	<h4>Activity</h4><%= f.input :activity, label: false %>
+	<h4>Address (Street, City)</h4><%= f.input :address, label: false %>
 	
-	<%= f.input :urlevernote %>
-	<%= f.input :urlcompanywebsite %>
-	<%= f.input :Bloombergid %>
-	<%= f.input :corpimage %>
-	<%= f.input :logoimage %>
+	<h4>Evernote link</h4><%= f.input :urlevernote, label: false %>
+	<h4>Google news link</h4><%= f.input :urlgooglenews, label: false %>
+	<h4>Company Website</h4><%= f.input :urlcompanywebsite, label: false %>
+	<h4>Bloomberg Ticker</h4><%= f.input :Bloombergid, label: false %>
+	<h4>Selected image</h4><%= f.input :corpimage, label: false %>
+	<h4>Logo</h4><%= f.input :logoimage, label: false %>
 	
 	
 
@@ -20,3 +24,4 @@
 	<%= f.button :submit, "Add a corporate" %>
 	* Required field
 <% end %>
+</div>

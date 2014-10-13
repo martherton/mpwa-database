@@ -1,6 +1,6 @@
 // Place all the styles related to the corporates controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/ 
 .map {
 	max-width: 50%;
 	height: 20em;
@@ -29,6 +29,12 @@
 
 .corporate li {
 	display: inline-block;
+  width: 10em;
+  word-wrap: normal;
+}
+
+.corporate h1 {
+  font-size: 1em
 }
 
 .corporate h2 {
@@ -41,5 +47,78 @@
 
 #corpsearch {
 	position: relative;
-	left: 65em;
+	left: 64em;
+  bottom: 6.5em;
+
+}
+
+.fullsearch li form div {
+  display: inline-block;
+}
+
+
+.fullsearch h4 {
+  margin-bottom: 0;
+}
+
+.fullsearch li {
+  display: inline-block;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: #C8C8C8;
+}
+
+.fullsearch form {
+  background-color: #C8C8C8;
+}
+
+.fullsearch {
+  background-color: #DBDBDB;
+}
+
+.newopen input[type="text"],
+.newopen input[type="password"],
+.newopen input[type="email"],
+.newopen input[type="url"]
+ {
+  width: 30em;
+  background-color: #345678;
+  color: #FFFFFF;
+  border: inset;
+}
+
+.newopen input[type="number"] {
+    width: 5em;
+  background-color: #345678;
+  color: #FFFFFF;
+  border: inset;
+}
+
+.newopen textarea {
+	width: 60em;
+	background-color: #345678;
+  color: #FFFFFF;
+  border: inset;
+  height: 10em;
+}
+
+.newopen h4 {
+  margin-bottom: 0.2em;
+
+}
+
+.newopen {
+  background-color: #C8C8C8;
+    font-size: .7em;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5em;
+  margin-left: 15em;
+  margin-top: 2em;
+  
+}
+
+.newopen input[type="submit"] {
+   margin-left: 4em;
+   margin-top: 0.4em;
 }

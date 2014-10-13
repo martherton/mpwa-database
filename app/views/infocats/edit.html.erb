@@ -1,7 +1,7 @@
 <div class="newopen" >
-<h2>New Category</h2>
+<h2>Edit Category</h2>
 
-<%= simple_form_for [@user, @infocat], url: infocats_path, method: :post do |f| %>
+<%= simple_form_for [@user, @infocat], url: infocat_path, method: :put do |f| %>
 
 	<h4>Title</h4><%= f.input :title, label: false %>
 	<h4>Brief Description</h4><%= f.input :brief_description, label: false %>

@@ -1,22 +1,27 @@
+<div class="newopen" >
+<h2>Edit CV Item</h2>
+
+
 <%= simple_form_for [@user, @resumeitem], url: resumeitem_path, method: :put do |f| %>
 	
-	<%= f.input :sections, collection: ["Key","Experience","Education","Other"] %>
-	<%= f.input :organisation %>
-	<%= f.input :title_course %>
-	<%= f.input :location %>
-	<%= f.input :start_date %>
-	<%= f.input :end_date %>
-	<%= f.input :detail %>
-	<%= f.input :detail1 %>
-	<%= f.input :detail2 %>
-	<%= f.input :detail3 %>
-	<%= f.input :detail4 %>
-	<%= f.input :detail5 %>
-	<%= f.input :detail6 %>
-	<%= f.input :itemorder %>
-	<%= f.input :Moreinformation %>
+	<h4>Section</h4><%= f.input :sections, collection: ["Key","Experience","Education","Other"], label: false %>
+	<h4>Organisation</h4><%= f.input :organisation, label: false %>
+	<h4>Job title or course attended</h4><%= f.input :title_course, label: false %>
+	<h4>Location</h4><%= f.input :location, label: false %>
+	<h4>Start Date</h4><%= f.input :start_date, label: false %>
+	<h4>End Date</h4><%= f.input :end_date, label: false %>
+	<h4>Bullet 1</h4><%= f.input :detail, label: false %>
+	<h4>Bullet 2</h4><%= f.input :detail1, label: false %>
+	<h4>Bullet 3</h4><%= f.input :detail2, label: false %>
+	<h4>Bullet 4</h4><%= f.input :detail3, label: false %>
+	<h4>Bullet 5</h4><%= f.input :detail4, label: false %>
+	<h4>Bullet 6</h4><%= f.input :detail5, label: false %>
+	<h4>Bullet 7</h4><%= f.input :detail6, label: false %>
+	<h4>Item Order</h4><%= f.input :itemorder, label: false %>
+	<h4>Detailed Information</h4><%= f.input :Moreinformation, label: false %>
  
 
-	<%= f.button :submit, 'Enter data' %>
+	<%= f.button :submit, 'update CV Information' %>
 
 <% end %> 
+</div>

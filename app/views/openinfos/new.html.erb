@@ -1,11 +1,15 @@
+<div class="newopen" >
+<h2>New Pubic Item</h2>
+
 <%= simple_form_for [@user, @openinfo], url: openinfos_path, method: :post do |f| %>
 
-	<%= f.input :title %>
-	<%= f.input :Openinformation %>
-	<%= f.input :itemorder %>
-	<%= f.input :Moreinformation %>
+	<h4>Title</h4><%= f.input :title, label: false %>
+	<h4>Detail</h4><%= f.input :Openinformation, label: false %>
+	<h4>Item Order</h4><%= f.input :itemorder, label: false %>
+	<h4>More Information for Show page</h4><%= f.input :Moreinformation, label: false %>
 	
 	
 	<%= f.button :submit, "Add information" %>
 	* Required field
 <% end %>
+</div>

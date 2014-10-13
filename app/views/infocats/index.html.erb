@@ -25,11 +25,11 @@
 							<% if current_user? %>
 							<div class="Editingopen">
 							<h5><%= link_to "Edit", edit_infocat_path(infocat.id) %>
-							<%= link_to "Delete", infocat_path(infocat.id), method: :delete %></h5>
+							<%= link_to "Delete", infocat_path(infocat.id) %></h5>
 							</div>
 							
 							<% end %>	
-				
+				<hr>
 					
 				<% end %> 
 
