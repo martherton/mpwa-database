@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require leaflet
 //= require jquery_ujs
 //= require turbolinks
+//= require chosen-jquery
 //= require_tree .

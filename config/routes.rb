@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users do
   	resources :openinfos
     resources :resumeitems
+    resources :downloads
+    resources :corporates
   end	
   
   resource :session
@@ -19,5 +21,9 @@ Rails.application.routes.draw do
   resources :infocats
 
   resources :resumeitems
+
+  resources :downloads
+
+  resources :corporates
 
 end

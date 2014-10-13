@@ -23,6 +23,7 @@ class ResumeitemsController < ApplicationController
 		require_user
 		@user = current_user
 		@resumeitem = @user.resumeitems.new
+		
 	end
 	
 	def create

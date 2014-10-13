@@ -1,0 +1,44 @@
+<div class="ichead" >
+
+  <h2>Downloads</h2>
+  <p></p> 
+</div>
+<section class="downloads">	
+		
+			<div class="createpublic" >
+			<% if current_user? %>
+			<%= link_to "Create", new_download_path %>
+			<% end %>
+			</div>
+
+				<ul class="download">
+
+
+			 <% @downloads.each do |download| %>
+				
+					 
+						
+							<li>
+							<h2><%= download.title %> </h2>
+							<h5><%= download.description %><h5>
+							</li>
+							<li><%= link_to "Download Document", download_path(download.id) %></li>
+							<li><%= download.docupload.path %></li>
+
+							
+							<% if current_user? %>
+							<div class="Editingopen">
+							<h5><%= link_to "Edit", edit_download_path(download.id) %>
+							<%= link_to "Delete", download_path(download.id), method: :delete %></h5>
+							</div>
+							
+							<% end %>	
+				
+					
+				<% end %> 
+
+					</ul>
+			
+
+					
+	</section>

@@ -53,4 +53,11 @@ group :production do
 	gem 'rails_12factor'
 end	
 
-	
+gem 'leaflet-rails'
+gem 'chosen-rails'
+gem 'geocoder'
+gem 'seed_dump'
+
+gem 'countries'
+gem 'country_select'
+

@@ -1,0 +1,47 @@
+<div class="corplogo" >
+<%= image_tag @corporate.logoimage.url %>
+</div>
+
+<div class="corpreturn" >
+<% if current_user? %>
+							<div class="Editingopen">
+							<%= link_to "Edit", edit_corporate_path(@corporate.id) %>
+							<%= link_to "Delete", corporate_path(@corporate.id), method: :delete %>
+							<p></p>
+							</div>
+							<% else %>
+							<p></p>
+							<% end %>	
+
+
+	<h3><%= link_to "return to list", corporates_path %></h3>
+	</div>
+
+	
+
+
+<div class="corpinfo" >
+<h2><%= @corporate.name %></h2>
+<% @c = Country.new(@corporate.country) %>
+<h3><%= @c.name %></h3>
+<h3><%= @corporate.sector %></h3>
+<h4><%= @corporate.activity %></h4>
+</div>
+
+<div class="corplinks" >
+<ul>
+<li><%= link_to "Google News", @corporate.urlgooglenews %></li>
+<li><%= link_to "Evernote", @corporate.urlevernote %></li>
+<li><%= link_to "Company website", @corporate.urlcompanywebsite %></li>
+<li><%= @corporate.Bloombergid %>
+</ul>
+</div>
+
+<div class="map" data-lat='<%= @corporate.latitude %>' data-lng='<%= @corporate.longitude %>'>
+  
+	</div>
+
+<div class="corpimage" >
+<%= image_tag @corporate.corpimage.url %>
+</div>
+	

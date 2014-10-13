@@ -1,0 +1,12 @@
+<%= simple_form_for [@user, @download], url: downloads_path, method: :post do |f| %>
+
+	<%= f.input :title %>
+	<%= f.input :description %>
+	<%= f.input :itemorder %>
+	<%= f.input :docupload, label: "Document to upload" %>
+	
+	
+	
+	<%= f.button :submit, "Add information" %>
+	* Required field
+<% end %>

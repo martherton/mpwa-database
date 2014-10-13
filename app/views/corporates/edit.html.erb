@@ -1,0 +1,21 @@
+<%= simple_form_for [@user, @corporate], url: corporate_path, method: :put do |f| %>
+
+	<%= f.input :name %>
+	<%= f.input :country %>
+	<%= f.input :sector %>
+	<%= f.input :activity %>
+	<%= f.input :address, label: 'Street, City' %>
+	
+	<%= f.input :urlevernote %>
+	<%= f.input :urlcompanywebsite %>
+	<%= f.input :urlgooglenews %>
+	<%= f.input :Bloombergid %>
+	<%= f.input :corpimage %>
+	<%= f.input :logoimage %>
+	
+
+ 
+	
+	<%= f.button :submit, "Alter corporate info" %>
+	* Required field
+<% end %>

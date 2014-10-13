@@ -1,0 +1,45 @@
+// Place all the styles related to the corporates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.map {
+	max-width: 50%;
+	height: 20em;
+	border: 0.5em solid #345678;
+}
+
+.corpreturn {
+	text-align: right;
+}
+
+.corplinks a {
+	text-decoration: none;
+}
+
+.corplinks li {
+	display: inline-block;
+	margin-bottom: 2em;
+	padding-left: 3em;
+	padding-right: 3em;
+	border: 0.2em solid #345678;
+}
+
+.corplinks a:hover {
+	background-color: #DBDBDB;
+}
+
+.corporate li {
+	display: inline-block;
+}
+
+.corporate h2 {
+	font-size: 0.8em;
+}
+
+.corporates {
+	margin: 2em;
+}
+
+#corpsearch {
+	position: relative;
+	left: 65em;
+}

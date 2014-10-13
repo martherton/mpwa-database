@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
 	has_many :openinfos
 	has_many :resumeitems
 	has_many :infocats
+	has_many :downloads
+	has_many :corporates
 end

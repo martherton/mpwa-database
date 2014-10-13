@@ -4,3 +4,39 @@
 .ichead {
 	text-align: center;
 }
+
+.categories {
+	margin: 1em;
+}
+
+.category a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.category h2 {
+	font-size: 1.2em;
+}
+
+.category h5 {
+	font-size: 0.9em;
+	text-indent: 2em;
+}
+
+.category a:hover {
+	background-color: #DBDBDB;
+}
+
+
+
+.Editingopen h5 {
+	text-align: right;
+	display: block;
+}
+
+.Editingopen a {
+	padding: 1em;
+	text-decoration: underline;
+	color: #345678;
+	font-weight: normal;
+}

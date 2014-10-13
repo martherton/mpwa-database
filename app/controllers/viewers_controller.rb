@@ -8,7 +8,7 @@ class ViewersController < ApplicationController
   	require_user
   	@viewer = Viewer.new(user_params)
   	if @viewer.save
-        flash[:success] = "Thanks for signing up! Now please log in."
+        flash[:success] = "New Viewer created."
         redirect_to root_path
     else
       flash[:error] = "Oops, try again."

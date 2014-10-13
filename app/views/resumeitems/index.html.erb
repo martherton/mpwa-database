@@ -2,6 +2,12 @@
 
 <h2 id="resumehead" >CV/Resume</h2>
 
+	<div class="createpublic">
+		<% if current_user? %>
+		<%= link_to "Create", new_resumeitem_path %>
+		<% end %>
+	</div>	
+
 		<ul class="resumetabs">
 			
 			  
@@ -17,9 +23,18 @@
 					 
 						
 						
-							<li><h4><%= resumeitem.detail %><%= link_to "...", resumeitem_path(resumeitem.id) %></h4></li>
+							<li><h4><%= resumeitem.detail %></h4>
+							<% if resumeitem.Moreinformation.nil? %>
+							</h4>
+							<% elsif resumeitem.Moreinformation.empty? %>
+							</h4>
+							<%else%>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %></h4>
+							<%end%>
+							
+							</li >
 							<% if current_user? %><%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
-							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %><% end %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %><% end %></li>
 							
 							
 				
@@ -52,12 +67,24 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
-							<%= link_to "...", resumeitem_path(resumeitem.id) %>
-							</ul>			
+							<% if resumeitem.Moreinformation.nil? %>
+							</h4>
+							<% elsif resumeitem.Moreinformation.empty? %>
+							</h4>
+							<%else%>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %></h4>
+							<%end%>
+							
+							</li>
+							</ul>		
+								
 							<% if current_user? %>
-							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
-							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<div class="Editingopen" >	
+							<h5><%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %></h5>
+							</div>
 							<% end %>
+							
 						</div>
 				
 					
@@ -88,11 +115,21 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
-							<%= link_to "...", resumeitem_path(resumeitem.id) %>
+							<% if resumeitem.Moreinformation.nil? %>
+							</h4>
+							<% elsif resumeitem.Moreinformation.empty? %>
+							</h4>
+							<%else%>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %></h4>
+							<%end%>
+							
+							</li>
 							</ul>
 							<% if current_user? %>
-							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
-							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<div class="Editingopen" >	
+							<h5><%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %></h5>
+							</div>
 							<% end %>
 							
 					</div>
@@ -123,11 +160,21 @@
 							<li><%= resumeitem.detail4 %></li>
 							<li><%= resumeitem.detail5 %></li>
 							<li><%= resumeitem.detail6 %></li>
-							<%= link_to "...", resumeitem_path(resumeitem.id) %>
+						<% if resumeitem.Moreinformation.nil? %>
+							</h4>
+							<% elsif resumeitem.Moreinformation.empty? %>
+							</h4>
+							<%else%>
+							<%= link_to "...", resumeitem_path(resumeitem.id) %></h4>
+							<%end%>
+							
+							</li>
 							</ul>
 							<% if current_user? %>
-							<%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
-							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %>
+							<div class="Editingopen" >	
+							<h5><%= link_to "Edit", edit_resumeitem_path(resumeitem.id) %>
+							<%= link_to "Delete", resumeitem_path(resumeitem.id), method: :delete %></h5>
+							</div>
 							<% end %>
 					
 					
@@ -139,8 +186,4 @@
 
 	</section>
 
-	<div id="create">
-		<% if current_user? %>
-		<%= link_to "Create", new_resumeitem_path %>
-		<% end %>
-	</div>	
+	

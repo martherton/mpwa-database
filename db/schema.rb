@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008172249) do
+ActiveRecord::Schema.define(version: 20141011092856) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,53 +46,84 @@ ActiveRecord::Schema.define(version: 20141008172249) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "infocats", force: true do |t|
+  create_table "corporates", force: true do |t|
+    t.string   "name"
+    t.string   "country"
+    t.string   "sector"
+    t.string   "address"
+    t.text     "activity"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "urlevernote"
+    t.string   "urlcompanywebsite"
+    t.string   "urlgooglenews"
+    t.string   "Bloombergid"
+    t.string   "corpimage_file_name"
+    t.string   "corpimage_content_type"
+    t.integer  "corpimage_file_size"
+    t.datetime "corpimage_updated_at"
+    t.string   "logoimage_file_name"
+    t.string   "logoimage_content_type"
+    t.integer  "logoimage_file_size"
+    t.datetime "logoimage_updated_at"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "downloads", force: true do |t|
     t.string   "title"
-    t.text     "brief_description"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "itemorder"
+    t.string   "routing"
+    t.string   "docupload_file_name"
+    t.string   "docupload_content_type"
+    t.integer  "docupload_file_size"
+    t.datetime "docupload_updated_at"
+  end
+
+  create_table "infocats", force: true do |t|
+    t.string   "title"
+    t.string   "brief_description"
     t.integer  "itemorder"
     t.string   "routing"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "openinfos", force: true do |t|
     t.string   "title"
     t.text     "Openinformation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "itemorder"
     t.text     "Moreinformation"
-  end
-
-  create_table "publicinfos", force: true do |t|
-    t.string   "title"
-    t.string   "publicinformation"
+    t.integer  "itemorder"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "resumeitems", force: true do |t|
-    t.string   "sections"
-    t.text     "detail"
-    t.string   "start_date"
-    t.string   "end_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "type"
     t.string   "organisation"
-    t.string   "title_course"
     t.string   "location"
+    t.string   "title_course"
     t.string   "detail1"
     t.string   "detail2"
     t.string   "detail3"
     t.string   "detail4"
     t.string   "detail5"
     t.string   "detail6"
+    t.string   "start_date"
+    t.string   "end_date"
+    t.text     "detail"
+    t.string   "sections"
     t.integer  "user_id"
+    t.text     "Moreinformation"
     t.text     "extradetail"
     t.integer  "itemorder"
-    t.text     "Moreinformation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

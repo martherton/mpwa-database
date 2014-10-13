@@ -1,6 +1,6 @@
 <%= simple_form_for [@user, @resumeitem], url: resumeitem_path, method: :put do |f| %>
 	
-	<%= f.input :sections %>
+	<%= f.input :sections, collection: ["Key","Experience","Education","Other"] %>
 	<%= f.input :organisation %>
 	<%= f.input :title_course %>
 	<%= f.input :location %>

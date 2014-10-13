@@ -1,0 +1,33 @@
+<section class="corporates">	
+
+		<div class="login" id="corpsearch" >
+					<%= simple_form_for :search, url: corporates_path, method: :get do |f| %>
+          <h4>Search</h4><%= f.input :q, label: false %>
+          <% end %>
+    </div>      
+
+<% if current_user? %>
+<%= link_to "Create", new_corporate_path %>
+<% end %>
+		
+			<% @corporates.each do |corporate| %>
+				
+					<div class="corporate">
+						
+						<div>
+							<% @c = Country.new(corporate.country) %>
+							<ul>
+							<li><h2><%= link_to corporate.name, corporate_path(corporate.id) %></h2></li>
+							<li><h2><%= @c.name %></h2></li>
+							<li><h2><%= corporate.sector %></h2></li>
+							</ul>	
+							
+						</div>		
+				
+					</div>
+					
+				<% end %>
+			
+
+					
+	</section>
