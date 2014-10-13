@@ -10,7 +10,7 @@ class ViewersessionsController < ApplicationController
 
   	if @viewer.present? and @viewer.authenticate(@password)  #the bcrypt check that the password is correct
   		session[:viewer_id] = @viewer.id 
-  		redirect_to infocats_path
+  		redirect_to root_path
 
   	else
   		flash[:error] = "Information not recognised!  Try Again"

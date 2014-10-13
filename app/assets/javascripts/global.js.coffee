@@ -46,3 +46,5 @@ $(document).on "page:load ready", ->
       long: $(@).data("lng")
     })
 
+$(document).on('page:load', ready);
+

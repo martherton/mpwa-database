@@ -1,3 +1,4 @@
+window.addEventListener("page:load", initAll, false);
 window.addEventListener("load", initAll, false);
 
 function initAll() {
@@ -25,3 +26,4 @@ function changeBackText() {
 	
 	document.getElementById("hidcontain").style.display = "none";
 }
+
