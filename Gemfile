@@ -61,3 +61,5 @@ gem 'seed_dump'
 gem 'countries'
 gem 'country_select'
 
+gem 'aws-sdk-v1'
+

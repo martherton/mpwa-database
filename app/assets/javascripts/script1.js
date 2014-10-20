@@ -16,6 +16,15 @@ function initAll() {
 	var allLinks3 = document.getElementById("suredeletelink")		
 
 			allLinks3.addEventListener("click",showSure,false)
+
+	var allLinks4 = document.getElementById("downdel")		
+
+			allLinks4.addEventListener("click",showDel,false)		
+
+	var allLinks5 = document.getElementById("hiddowndel")		
+
+			allLinks5.addEventListener("click",hideDel,false)				
+
 }	
 
 function changeText() {
@@ -31,5 +40,13 @@ function changeBackText() {
 
 function showSure() {
 	document.getElementById("suredelete").style.display = "block";
+}
+
+function showDel() {
+	document.getElementById("downdelhid").style.display = "block";
+}
+
+function hideDel() {
+	document.getElementById("downdelhid").style.display = "none";
 }
 

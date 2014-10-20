@@ -31,7 +31,11 @@
 							<% if current_user? %>
 							<div class="Editingopen">
 							<h5><%= link_to "Edit", edit_download_path(download.id) %>
-							<%= link_to "Delete", download_path(download.id), method: :delete %></h5>
+							<a href = "#" id="downdel" >Delete</a></h5>
+							<div id = "downdelhid" >
+							<h5><%= link_to "Yes", download_path(download.id), method: :delete %></h5>
+							<h5><a href = "#" id="hiddowndel" >No</a></h5>
+							</div>
 							</div>
 							
 							<% end %>	
