@@ -63,3 +63,7 @@ gem 'country_select'
 
 gem 'aws-sdk-v1'
 
+gem 'aws-s3'
+
+
+

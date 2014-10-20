@@ -29,7 +29,11 @@ class DownloadsController < ApplicationController
 
 	def show
 		@download = Download.find(params[:id])
-		send_file(@download.docupload.path)
+		@downloadpath = @download.docupload.path
+		@downloadurl = @downloadpath.insert(0, "https://s3.amazonaws.com/m356p748w857a")
+		data = open(@downloadurl)
+		send_data data.read, filename: @download.docupload_file_name, disposition: 'inline', stream: 'true', buffer_size: '4096'
+		#send_file(@downloadurl)
 		
 	end	
 
