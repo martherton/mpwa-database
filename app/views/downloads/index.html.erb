@@ -11,12 +11,12 @@
 			<% end %>
 			</div>
 
-				<ul class="download">
+				<ul class="download"> 
 
 
-			 <% @downloads.each do |download| %>
+			 <% @downloads.each_with_index do |download, index| %>
 				
-					 
+					
 						
 							<li>
 							<h2><%= download.title %> </h2>
@@ -31,11 +31,11 @@
 							<% if current_user? %>
 							<div class="Editingopen">
 							<h5><%= link_to "Edit", edit_download_path(download.id) %>
-							<a href = "#" id="downdel" >Delete</a></h5>
-							<div id = "downdelhid" >
-							<h5><%= link_to "Yes", download_path(download.id), method: :delete %></h5>
-							<h5><a href = "#" id="hiddowndel" >No</a></h5>
-							</div>
+							    <a href = "#" class="dochid" id=<%="downdel"+index.to_s%>  >Delete</a></h5>
+							   <div class="behid" id = <%="downdelhid"+index.to_s%> >
+							      <h5><%= link_to "Yes", download_path(download.id), method: :delete %></h5>
+							      <h5><a href = "#" class="dochid2" id=<%="hiddowndel"+index.to_s%>  >No</a></h5>
+							   </div>
 							</div>
 							
 							<% end %>	

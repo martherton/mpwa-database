@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: [:development, :test]
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,7 +44,7 @@ gem 'activeadmin', github: 'activeadmin/active_admin'
 
 gem 'devise'  #required for active_admin
 
-ruby "2.1.2"
+
 
 gem 'paperclip'
 
@@ -56,7 +56,7 @@ end
 gem 'leaflet-rails'
 gem 'chosen-rails'
 gem 'geocoder'
-gem 'seed_dump'
+gem 'seed_dump', group: :development
 
 gem 'countries'
 gem 'country_select'
@@ -65,5 +65,5 @@ gem 'aws-sdk-v1'
 
 gem 'aws-s3'
 
-
+ruby "2.1.2"
 

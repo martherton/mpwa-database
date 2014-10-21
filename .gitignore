@@ -18,3 +18,4 @@
 /config/s3.yml
 /config/environments/development.rb
 /config/environments/production.rb
+app/model/downloads.rb

@@ -3,11 +3,11 @@ class DownloadsController < ApplicationController
 	  if current_viewer?
 	   @downloads = Download.all.order('itemorder')
 	   @viewer = current_viewer
-	   
+	  
 	   elsif current_user?
 	   @downloads = Download.all.order('itemorder')
 	   @user = current_user
-	   
+	
 	   else
 	   redirect_to root
 	 end
