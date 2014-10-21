@@ -41,3 +41,9 @@ User.create!([
   {username: "mpwa1", email: "test@mpwa.me", password: "testtest", password_confirmation: "testtest"},
   {username: "mpwa", email: "mark@mpwa.me", password: "testtest", password_confirmation: "testtest"}
 ])
+
+
+Viewer.create!([
+  {username: "test", email: "test@test", password: "12345678", password_confirmation: "12345678"},
+  {username: "test2", email: "test2@test", password: "12345678", password_confirmation: "12345678"}
+  ])

@@ -22,11 +22,12 @@
 							<h2><%= download.title %> </h2>
 							<h5><%= download.description %><h5>
 							</li>
-							<li><%= link_to(download_path(download.id)) do %><%= image_tag "document-icon.png" %><% end %></li>
 							<% if current_user?%>
+							<li><%= link_to(download_path(download.id)) do %><%= image_tag "document-icon.png" %><% end %></li>
+							
 							<li><%= download.docupload.path %></li>
+							
 							<%end%>
-
 							
 							<% if current_user? %>
 							<div class="Editingopen">

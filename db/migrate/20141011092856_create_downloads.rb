@@ -6,6 +6,7 @@ class CreateDownloads < ActiveRecord::Migration
     	t.integer :user_id
     	t.integer :itemorder
     	t.string :routing
+        t.boolean :ViewerAllowed
     	t.attachment :docupload
     end
   end

@@ -1,11 +1,11 @@
 class DownloadsController < ApplicationController
 	def index
 	  if current_viewer?
-	   @downloads = Download.all.order('itemorder')
+	   @downloads = Download.where(:ViewerAllowed => true).order('itemorder')
 	   @viewer = current_viewer
 	  
 	   elsif current_user?
-	   @downloads = Download.all.order('itemorder')
+	   @downloads = Download.order('itemorder')
 	   @user = current_user
 	
 	   else
@@ -70,6 +70,6 @@ class DownloadsController < ApplicationController
     private
 
     def download_params
-    	params.require(:download).permit(:title, :description, :user_id, :itemorder, :routing, :docupload)
+    	params.require(:download).permit(:title, :description, :user_id, :itemorder, :routing, :docupload, :ViewerAllowed)
     end	
 end

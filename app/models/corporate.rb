@@ -39,8 +39,8 @@ class Corporate < ActiveRecord::Base
 	end
 
 	def s3_credentials
-		{ :access_key_id => "AKIAJ6JP3U2RXXRDMZJQ",
-:secret_access_key => "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",
+		{ :access_key_id => "AKIAIVNBXKTNNXTMJZNQ",
+:secret_access_key => "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",
 :bucket => "m356p748w857a" }
 	end	
 

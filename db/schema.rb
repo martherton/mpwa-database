@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20141011092856) do
     t.integer  "user_id"
     t.integer  "itemorder"
     t.string   "routing"
+    t.boolean  "ViewerAllowed"
     t.string   "docupload_file_name"
     t.string   "docupload_content_type"
     t.integer  "docupload_file_size"
