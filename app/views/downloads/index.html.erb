@@ -17,14 +17,14 @@
 			 <% @downloads.each_with_index do |download, index| %>
 				
 					
-						
-							<li>
-							<h2><%= download.title %> </h2>
+							<li><h2><%= link_to(download_path(download.id)) do %><%= image_tag "document-icon.png" %><% end %>
+							
+							<%= download.title %> </h2>
 							<h5><%= download.description %><h5>
 							</li>
-							<% if current_user?%>
-							<li><%= link_to(download_path(download.id)) do %><%= image_tag "document-icon.png" %><% end %></li>
 							
+							
+							<% if current_user?%>
 							<li><%= download.docupload.path %></li>
 							
 							<%end%>
