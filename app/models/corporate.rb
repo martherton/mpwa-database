@@ -1,8 +1,20 @@
 class Corporate < ActiveRecord::Base
-	has_attached_file :corpimage
+	has_attached_file :corpimage,
+	:url => "/images/:hash.:extension",
+		:hash_secret => "longSecretString",
+		:path =>"/images/:hash.:extension",
+		:storage => :s3,
+		:s3_credentials => Proc.new {|a| a.instance.s3_credentials }
+
 	validates_attachment_content_type :corpimage, :content_type => /\Aimage\/.*\Z/
 
-	has_attached_file :logoimage
+	has_attached_file :logoimage,
+	:url => "/images/:hash.:extension",
+		:hash_secret => "longSecretString",
+		:path =>"/images/:hash.:extension",
+		:storage => :s3,
+		:s3_credentials => Proc.new {|a| a.instance.s3_credentials }
+
 	validates_attachment_content_type :logoimage, :content_type => /\Aimage\/.*\Z/
 
 	belongs_to :user
@@ -25,5 +37,11 @@ class Corporate < ActiveRecord::Base
 
 
 	end
+
+	def s3_credentials
+		{ :access_key_id => "AKIAJ6JP3U2RXXRDMZJQ",
+:secret_access_key => "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",
+:bucket => "m356p748w857a" }
+	end	
 
 end

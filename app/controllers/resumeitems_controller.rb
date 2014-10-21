@@ -32,7 +32,7 @@ class ResumeitemsController < ApplicationController
 		@resumeitem = @user.resumeitems.new(resumeitem_params)
   	if @resumeitem.save
         flash[:success] = "Thanks for submitting"
-        redirect_to root_path
+        redirect_to resumeitems_path
     else
       flash[:error] = "Oops, try again."
   	 render :new
