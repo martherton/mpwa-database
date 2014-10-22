@@ -17,4 +17,6 @@
 //= require turbolinks
 //= require chosen-jquery.min.js
 //= require global
+//= require script1
+//= require script2
 //= require_tree .
