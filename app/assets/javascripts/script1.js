@@ -1,7 +1,7 @@
-window.addEventListener("page:load", initAll, false);
-window.addEventListener("load", initAll, false);
+window.addEventListener("page:load", initAll1, false);
+window.addEventListener("load", initAll1, false);
 
-function initAll() {
+function initAll1() {
 	var allLinks = document.getElementById("drophidden");
 
 			allLinks.addEventListener("mouseover",changeText,false);

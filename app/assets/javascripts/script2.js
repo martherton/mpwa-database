@@ -1,7 +1,7 @@
-window.addEventListener("page:load", initAll, false);
-window.addEventListener("load", initAll, false);
+window.addEventListener("page:load", initAll2, false);
+window.addEventListener("load", initAll2, false);
 
-function initAll() {
+function initAll2() {
 
 
 var allLinks4 = document.getElementsByTagName("a");		
