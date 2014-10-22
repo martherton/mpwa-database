@@ -15,5 +15,6 @@
 //= require leaflet
 //= require jquery_ujs
 //= require turbolinks
-//= require chosen-jquery
+//= require chosen-jquery.min.js
+//= require global
 //= require_tree .
