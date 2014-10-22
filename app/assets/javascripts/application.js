@@ -13,7 +13,6 @@
 //= require_self
 //= require jquery
 //= require leaflet
-//= require 'script1'
 //= require jquery_ujs
 //= require turbolinks
 //= require chosen-jquery
