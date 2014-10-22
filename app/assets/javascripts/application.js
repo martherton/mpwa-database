@@ -15,7 +15,7 @@
 //= require leaflet
 //= require jquery_ujs
 //= require turbolinks
-//= require chosen-jquery.min.js
+//= require chosen.jquery.min.js
 //= require global
 //= require script1
 //= require script2
