@@ -10,6 +10,12 @@
   <% if content_for? :for_head %>
     <%= yield :for_head %>
   <% end %>
+  <% if content_for? :for_head_showcorp %>
+    <%= yield :for_head_showcorp %>
+  <% end %>
+  <% if content_for? :for_head_newcorp %>
+    <%= yield :for_head_newcorp %>
+  <% end %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
