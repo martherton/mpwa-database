@@ -3,6 +3,7 @@
 <html>
 
 <head>
+  <%= favicon_link_tag 'favicon.ico' %>
   <title>Access to extra information - mpwa.me</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,16 +12,16 @@
     <%= yield :for_head %>
   <% end %>
   <% if content_for? :for_head_showcorp %>
-    <%= yield :for_head_showcorp %>
+    <%= yield :for_head_showcorp %> 
   <% end %>
   <% if content_for? :for_head_newcorp %>
     <%= yield :for_head_newcorp %>
   <% end %>
   <% if content_for? :for_head_editcorp %>
     <%= yield :for_head_editcorp %>
-  <% end %>
+  <% end %> 
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
+  
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8" />
 
