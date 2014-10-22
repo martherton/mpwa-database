@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require jquery
 //= require leaflet
+//= require script1
 //= require jquery_ujs
 //= require turbolinks
 //= require chosen-jquery
 //= require_tree .
-//= require script1.js
