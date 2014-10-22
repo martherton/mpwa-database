@@ -7,6 +7,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'script1.js' %>
+  <% if content_for? :for_head %>
+    <%= yield :for_head %>
+  <% end %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
